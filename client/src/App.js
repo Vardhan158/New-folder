@@ -7,19 +7,19 @@ function App() {
   const [form, setForm] = useState({ title: '', content: '' });
 
   const fetchNotes = async () => {
-    const res = await axios.get('https://new-folder-2-9i4f.onrender.com/notes');
+    const res = await axios.get('https://new-folder-w6ck.onrender.com/notes');
     setNotes(res.data);
   };
 
   const addNote = async () => {
     if (!form.title || !form.content) return alert("Please fill all fields.");
-    await axios.post('https://new-folder-2-9i4f.onrender.com/notes', form);
+    await axios.post('https://new-folder-w6ck.onrender.com/notes', form);
     setForm({ title: '', content: '' });
     fetchNotes();
   };
 
   const deleteNote = async (id) => {
-    await axios.delete(`https://new-folder-2-9i4f.onrender.com/notes/${id}`);
+    await axios.delete(`https://new-folder-w6ck.onrender.com/notes/${id}`);
     fetchNotes();
   };
 
